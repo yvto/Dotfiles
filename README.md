@@ -10,6 +10,12 @@ pip3 install pywal16
 ```
 Then just apply theme using: `wal -i /path/to/image` or different command of your choice.
 
+Also make sure you have installed programs listed below.
+- hyprland
+- hyprpaper
+- hyprlock
+- rofi
+
 # Nvim
 For Lsp to work you have to install lsp servers using build in mason plugin, and enable them in init.lua file.
 
