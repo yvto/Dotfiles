@@ -15,6 +15,7 @@ Also make sure you have installed programs listed below.
 - hyprpaper
 - hyprlock
 - rofi
+- nerdfont (JetBraisMono Nerd Font)
 
 # Nvim
 For Lsp to work you have to install lsp servers using build in mason plugin, and enable them in init.lua file.
