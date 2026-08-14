@@ -23,6 +23,9 @@ Also make sure you have installed programs listed below.
 - hyprpaper
 - hyprlock
 - rofi
+- grim
+- slurp
+- swaync
 
 
 # Nvim
