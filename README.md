@@ -11,18 +11,19 @@ pip3 install pywal16
 ```
 Then just apply theme using: `wal -i /path/to/image` or different command of your choice.
 ## Nerd Font
-To install nerd fonts (recommended: JetBrainsMono). If you are on Linux Fedora, type:
+To install nerdfont (recommended: JetBrainsMono) all you have to do is download zip, uzip it. Copy fonts in your unziped file to right folder 
 ```
-sudo dnf install  jetbrains-mono-fonts
+mkdir -p ~/.local/share/fonts
+cp JetBrainsMono/fonts/ttf/*.ttf ~/.local/share/fonts/
 ```
-Then all you have to do is type: `sudo fc-cache -v`, and you are good to go!
+Next what you have to do is type: `fc-cache -f -v` to refresh font cache, and now just reboot your system.
 
 Also make sure you have installed programs listed below.
 - hyprland
 - hyprpaper
 - hyprlock
 - rofi
-- nerdfont (JetBraisMono Nerd Font)
+
 
 # Nvim
 For Lsp to work you have to install lsp servers using build in mason plugin, and enable them in init.lua file.
