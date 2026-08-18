@@ -35,4 +35,4 @@ For Lsp to work you have to install lsp servers using build in mason plugin, and
 To everything to work properly you have to install pywal16.
 
 # Zsh 
-[[zsh_instruction.md]]
+[zsh_instruction.md]
