@@ -1,8 +1,7 @@
 # Instruction
-To use that config you have to first install zsh and change it to your default shell. To do that first use your package manager to 
-install zsh. 
+To use that config you have to first install zsh and change it to your default shell. 
 ### Instalation of zsh
-On Fedora you have to type: 
+You should install it using your package managaer, on fedora you have to type: 
 ```
 sudo dnf install zsh
 ```
