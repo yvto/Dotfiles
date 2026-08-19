@@ -23,6 +23,9 @@ Also make sure you have installed programs listed below.
 - grim
 - slurp
 - swaync
+- qt5ct
+- qt6ct
+- nwq-look
 
 
 # Nvim
