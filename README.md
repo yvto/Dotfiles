@@ -19,6 +19,7 @@ Also make sure you have installed programs listed below.
 - hyprland
 - hyprpaper
 - hyprlock
+- hypridle
 - rofi
 - grim
 - slurp
