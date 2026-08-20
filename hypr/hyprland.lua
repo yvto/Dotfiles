@@ -7,7 +7,6 @@
 ---- MONITORS ----
 ------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
     output   = "eDP-1",
     mode     = "1920x1080@60",
@@ -22,7 +21,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "thunar"
+local fileManager = "nautilus"
 local menu        = "rofi -show drun -show-icons"
 
 
@@ -30,16 +29,13 @@ local menu        = "rofi -show drun -show-icons"
 ---- AUTOSTART ----
 -------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
 hl.on("hyprland.start", function () 
+  hl.exec_cmd("systemctl --user start hyprland-session.target")
   hl.exec_cmd("waybar")
   hl.exec_cmd("systemctl --user start hyprpolkitagent") 
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("swaync")
+  hl.exec_cmd("hypridle")
 end)
 
 
@@ -52,6 +48,7 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -79,15 +76,10 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 3,
-        gaps_out = 7,
+        gaps_in  = 2,
+        gaps_out = 6,
 
-        border_size = 1,
-
-        col = {
-            active_border   = { colors = {"#ffffff"} },
-            inactive_border = "rgba(595959aa)",
-        },
+        border_size = 0,
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,
@@ -99,19 +91,10 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 0,
-        rounding_power = 0,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
-        inactive_opacity = 0.9,
-
-        shadow = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
-        },
+        inactive_opacity = 0.84,
 
         blur = {
             enabled   = true,
@@ -259,6 +242,8 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu)) -- App Launcher
 hl.bind(secondMod .. " + W", hl.dsp.exec_cmd("rofi-wifi-menu.sh")) -- Wifi Manager
 hl.bind(secondMod .. " + B", hl.dsp.exec_cmd("rofi-bluetooth.sh")) -- Bluetooth Manager
 hl.bind(secondMod .. " + D", hl.dsp.exec_cmd("hyprlock")) -- Lockscreen
+hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" && notify-send "Screenshot taken" ')) -- Takes screenshot of certain part of your screen
+hl.bind("SHIFT" .. " + Print", hl.dsp.exec_cmd('grim && notify-send "Screenshot taken" ')) -- Takes screenshot of whole screen
 
 -- Killing programs
 hl.bind(mainMod .. " + Q", hl.dsp.window.close()) -- Current Window
