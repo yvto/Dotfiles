@@ -53,5 +53,5 @@ additional actions for program to work as intended, instructions will be listed 
 - add git features for zsh and nvim
 - make brightness indicator
 - decide between eog and image viewer
-- clean files from unnessesary files
+- remove unnessesary files
 - add wallpaper selector
